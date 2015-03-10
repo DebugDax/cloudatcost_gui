@@ -7,8 +7,7 @@
 Opt("GUIOnEventMode", 1)
 
 Global $title = "VPS Status"
-Global $sid, $key, $email
-Global $name, $ip, $putty
+Global $sid, $key, $email, $name, $ip, $putty
 
 If Not FileExists(@ScriptDir & "\config.ini") Then
 	IniWrite(@ScriptDir & "\config.ini", "AUTH", "key", "")
@@ -48,10 +47,10 @@ GUICtrlCreateGroup("", -99, -99, 1, 1)
 $cboserver = GUICtrlCreateCombo("", 264, 8, 81, 25, BitOR($CBS_DROPDOWNLIST, $CBS_AUTOHSCROLL, $CBS_UPPERCASE))
 
 If FileExists(@ScriptDir & "\config.ini") Then
-	Local $num = IniRead(@ScriptDir & "\config.ini", "NAMES", "COUNT", "0")
-	Local $str = ""
+	$num = IniRead(@ScriptDir & "\config.ini", "NAMES", "COUNT", "0")
+	$str = ""
 	For $i = 1 To $num
-		Local $d = IniRead(@ScriptDir & "\config.ini", "NAMES", $i, $i)
+		$d = IniRead(@ScriptDir & "\config.ini", "NAMES", $i, $i)
 		$str = $str & $d & "|"
 	Next
 	$str = StringLeft($str, StringLen($str) - 1)
