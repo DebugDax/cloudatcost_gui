@@ -1,0 +1,14 @@
+A dirty and quick CloudAtCost GUI for monitoring VPS status.
+
+A configuration file is required and will be generated on the first execution.
+
+A sample configuration file:
+
+[AUTH]
+key=XxxxXXx
+email=john@doe.com
+
+[NAMES]
+count=2
+1=DevBox
+2=VPS002
